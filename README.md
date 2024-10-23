@@ -5,7 +5,10 @@ This repository contains the solution to the backend/data assignment for creatin
 - Frontend : https://silly-kelpie-6b31ec.netlify.app/
 
 - Backend : https://backend-game-production.up.railway.app/
-
+  
+## Video Link 
+- Loom - https://www.loom.com/share/ef1dc1a5b3a34ce18effe60cde39fe3f?sid=465640e1-9178-43ae-ba5f-658a5d9f9516
+  
 ## Problem Statement
 The goal is to build a system that can:
 - Accept a link to a CSV file and store the data.

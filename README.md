@@ -2,8 +2,9 @@
 This repository contains the solution to the backend/data assignment for creating a data explorer that allows data analysts to run queries and analysis on uploaded CSV data.
 
 ## Deployed solution
--Frontend : https://silly-kelpie-6b31ec.netlify.app/
--Backend : https://backend-game-production.up.railway.app/
+- Frontend : https://silly-kelpie-6b31ec.netlify.app/
+
+- Backend : https://backend-game-production.up.railway.app/
 
 ## Problem Statement
 The goal is to build a system that can:

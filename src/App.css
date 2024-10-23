@@ -1,0 +1,135 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.search-games-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.form-group input,
+.form-group select {
+  flex: 2;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.submit-btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.submit-btn:hover {
+  background-color: #45a049;
+}
+
+.results-container {
+  margin-top: 30px;
+}
+
+.results-container h2 {
+  text-align: center;
+}
+
+.results-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.results-container li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+.custom-table {
+  width: 10000px;
+  border-color: whitesmoke !important;
+}
+
+.custom-table td, 
+.custom-table th {
+  padding: 5px;
+  border: 2px solid whitesmoke !important;  /* Adds red borders to cells */
+}
+
+
+.custom-table th {
+  background-color: darkgrey;
+}
+
+.custom-table tr {
+  height: 10px !important;
+}
+
+.custom-table th {
+  position: sticky;
+  top: 0;
+  background-color: #343a40; /* Matches the dark header color from Bootstrap */
+  z-index: 1; /* Ensure it's above other table content */
+  color: white; /* Text color to contrast the dark background */
+}
+

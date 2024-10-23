@@ -67,6 +67,123 @@ sudo npm run dev
 - After user has provided the data it will redirect to /:username and by default all entries will be visible.
 - search column will be visible and after submitting the parameters a query will be initiated and results will be displayed on the frontend.
 
+## Endpoints
+
+### 1. Home Route (`/home`)
+- **Method**: GET
+- **Description**: A simple endpoint that returns a greeting message.
+- **Response**:
+  ```json
+  {
+    "message": "Hello, World!"
+  }
+  ```
+
+### 2. Upload CSV Route (`/upload_csv`)
+- **Method**: POST
+- **Description**: Upload a CSV file containing game data.
+- **Request Body**:
+  ```json
+  {
+    "username": "usertest",
+    "csv_url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSCtraqtnsdYd4FgEfqKsHMR2kiwqX1H9uewvAbuqBmOMSZqTAkSEXwPxWK_8uYQap5omtMrUF1UJAY/pub?gid=1439814054&single=true&output=csv"
+  }
+  ```
+- **Response** (on success):
+  ```json
+  {
+    "message": "CSV data processed successfully"
+  }
+  ```
+- **Response** (on failure):
+  ```json
+  {
+    "error": "Failed to fetch CSV"
+  }
+  ```
+
+### 3. Get Games by Username Route (`/<username>`)
+- **Method**: GET
+- **Description**: Get the list of games for a user.
+- **Response** (on success):
+  ```json
+  {
+    "username": "user",
+    "games": [
+      {
+        "app_id": 12345,
+        "name": "Game Title",
+        "release_date": "Oct 21, 2008",
+        "required_age": 18,
+        "price": 59.99,
+        "dlc_count": 3,
+        "about_game": "This is a cool game.",
+        "supported_languages": "English, French",
+        "windows": true,
+        "mac": false,
+        "linux": true,
+        "positive_reviews": 1000,
+        "negative_reviews": 50,
+        "score_rank": 95,
+        "developers": "Game Studio",
+        "publishers": "Game Publisher",
+        "categories": "Action, Adventure",
+        "genres": "RPG",
+        "tags": "Open World, Story Rich",
+        "uploaded_at": "2023-10-22T12:34:56Z"
+      }
+    ]
+  }
+  ```
+- **Response** (if user not found):
+  ```json
+  {
+    "message": "User not found"
+  }
+  ```
+
+### 4. Search Games Route (`/api/searchGames`)
+- **Method**: POST
+- **Description**: Search games based on multiple filters.
+- **Request Body**:
+  ```json
+  {
+    "username": "user",
+    "price": 59.99,
+    "price_condition": "<",
+    "tags": "Open World"
+  }
+  ```
+- **Response**:
+  ```json
+  {
+    "games": [
+      {
+        "app_id": 67890,
+        "name": "Another Game",
+        "release_date": "May 15, 2012",
+        "price": 39.99,
+        "required_age": 12,
+        "dlc_count": 2,
+        "about_game": "A fun open world game.",
+        "supported_languages": "English, Spanish",
+        "windows": true,
+        "mac": false,
+        "linux": false,
+        "positive_reviews": 800,
+        "negative_reviews": 20,
+        "score_rank": 90,
+        "developers": "Another Studio",
+        "publishers": "Another Publisher",
+        "categories": "Action, RPG",
+        "genres": "Open World",
+        "tags": "Adventure, Open World",
+        "uploaded_at": "2023-10-21T10:30:00Z"
+      }
+    ]
+  }
+  ```
+
 ## Cost Estimation for Running the System 24x7 in Production
 
 The following is an estimate of the cost for running this system in production on **Netlify** (frontend) and **Railway** (backend and database), 24x7 for 30 days, assuming one file upload (50 MB) and 100 queries per day.
